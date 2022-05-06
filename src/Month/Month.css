@@ -1,0 +1,16 @@
+#month-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1rem, 5vw, 2rem);
+    font-weight: 900;
+}
+
+#month-section svg {
+    cursor: pointer;
+}
+
+#month-section time {
+    width: clamp(350px, 20%, 100px);
+    text-align: center;
+}
