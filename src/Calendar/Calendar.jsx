@@ -1,17 +1,18 @@
 import React, {useContext} from 'react'
 import DAYS from "../Constant/Days";
 import MONTHS from '../Constant/Months';
-import COLORS from "../Constant/Colors";
 import { MonthContext } from '../Context/MonthContext';
 import { ModalContext } from '../Context/ModalContext';
 import { ThemeContext } from '../Context/ThemeContext';
+import { CalendarDataContext } from '../Context/CalendarDataContext';
 import EventForm from '../Form/EventForm';
 import './Calendar.css'
 
 export default function Calendar() {
+  const {data} = useContext(CalendarDataContext);
   const {month} = useContext(MonthContext);
   const {setDisplay, setTitle, setForm} = useContext(ModalContext);
-  const {isDark, themeColor} = useContext(ThemeContext);
+  const {themeColor} = useContext(ThemeContext);
 
   const displayDaysNames = () => {
     return (
@@ -63,9 +64,8 @@ export default function Calendar() {
                     if (day === 1) isMonth = !isMonth;
                     if (!isMonth) nameClass += " not-month"
                     return <td className={nameClass} key={ind}><span className={`day-span ${isMonth ? 'month-span' : 'not-month-span'}`}
-                      style={{ borderColor: isDark ? 
-                              COLORS.darkgrey :
-                              COLORS.lightgrey
+                      style={{border: data[`${day}${month.month}${month.year}`] !== undefined && 
+                              isMonth ? `2px solid ${themeColor}` : '0'
                       }}
                       onMouseEnter={(e) => { if (!e.target.className.includes('not-month-span')) e.target.style.backgroundColor = themeColor; }}
                       onMouseLeave={(e) => { if (!e.target.className.includes('not-month-span')) e.target.style.backgroundColor = 'transparent'; }}
