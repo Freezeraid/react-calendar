@@ -13,7 +13,7 @@ export default function Calendar() {
     return (
       <thead>
         <tr>
-          { DAYS.map((day, i) => <th key={i}>{day.substring(0, 3)}</th>) }
+          { DAYS.map((day, i) => <th key={i} style={{ color: themeColor}}>{day.substring(0, 3)}</th>) }
         </tr>
       </thead>
     )
