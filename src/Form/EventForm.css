@@ -8,6 +8,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 8% 0;
+    padding: 0 5%;
 }
 
 .day-event > div {
@@ -33,17 +34,17 @@
 #add-event-form {
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
 
 #add-event-form input {
-    padding: 3% 5%;
+    padding: 3%;
     font-size: 1.2rem;
     border-radius: 10px;
 }
 
 #add-event-form input[type='submit']{
-    flex: 15%;
-    background-color: green;
+    width: 15%;
     border: 0;
     color: #eee;
     text-align: center;
@@ -58,9 +59,9 @@
 }
 
 #event-title {
-    flex: 45%;
+    width: 45%;
 }
 
 #event-hour {
-    flex: 40%;
+    width: 30%;
 }

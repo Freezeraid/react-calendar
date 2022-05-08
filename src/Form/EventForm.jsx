@@ -1,5 +1,6 @@
 import React, { useContext, useRef } from 'react'
 import { CalendarDataContext } from '../Context/CalendarDataContext';
+import { ThemeContext } from '../Context/ThemeContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import COLORS from '../Constant/Colors';
@@ -9,6 +10,7 @@ import './EventForm.css'
 export default function EventForm({day, month, year}) {
     const dayIndex = `${day}${month}${year}`;
 
+    const { themeColor } = useContext(ThemeContext);
     const { data, setData } = useContext(CalendarDataContext);
 
     const eventTitle = useRef(null);
@@ -59,7 +61,8 @@ export default function EventForm({day, month, year}) {
                 <form id="add-event-form" onSubmit={sendNewEvent}>
                     <input type="text" ref={eventTitle} name="event-title" id="event-title" maxLength={40}/>
                     <input type="time" ref={eventHour} name="event-hour" id="event-hour" />
-                    <input type="submit" value="Add" />
+                    <input type="submit" value="Add" 
+                    style={{ backgroundColor:themeColor }}/>
                 </form>
             </div>
         </div>
