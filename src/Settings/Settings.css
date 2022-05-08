@@ -1,0 +1,11 @@
+#settings-container {
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    height: 4%;
+}
+
+#settings-container svg {
+    height: 100%;
+    cursor: pointer;
+}

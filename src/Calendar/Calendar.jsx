@@ -1,10 +1,13 @@
 import React, {useContext} from 'react'
 import { MonthContext } from '../Context/MonthContext';
 import DAYS from "../Constant/Days";
+import COLORS from "../Constant/Colors";
+import { ThemeContext } from '../Context/ThemeContext';
 import './Calendar.css'
 
 export default function Calendar() {
   const {month} = useContext(MonthContext);
+  const {isDark, themeColor} = useContext(ThemeContext);
 
   const displayDaysNames = () => {
     return (
@@ -45,7 +48,14 @@ export default function Calendar() {
                     let nameClass = "day-calendar";
                     if (day === 1) isMonth = !isMonth;
                     if (!isMonth) nameClass += " not-month"
-                    return <td className={nameClass} key={ind}><span>{day}</span></td> 
+                    return <td className={nameClass} key={ind}><span className={`day-span ${isMonth ? 'month-span' : 'not-month-span'}`}
+                      style={{ borderColor: isDark ? 
+                              COLORS.darkgrey :
+                              COLORS.lightgrey
+                      }}
+                      onMouseEnter={(e) => { if (!e.target.className.includes('not-month-span')) e.target.style.backgroundColor = themeColor; }}
+                      onMouseLeave={(e) => { if (!e.target.className.includes('not-month-span')) e.target.style.backgroundColor = 'transparent'; }}
+                    >{day}</span></td> 
                   })
                 }
               </tr>

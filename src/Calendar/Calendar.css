@@ -22,13 +22,17 @@
    width: 60px;
    height: 60px;
    border-radius: 10px;
-   border: 1px solid #bbb;
    cursor: pointer;
+   font-weight: 700;
+   background-color: transparent;
+   transition: background-color 0.1s linear;
 }
 
-.day-calendar {
-   font-weight: 700;
+#calendar-section .not-month span {
+   font-weight: 300;
+   cursor: not-allowed;
 }
+
 .day-calendar.not-month {
-   color: #bbb;
+   color: #888;
 }
