@@ -18,14 +18,14 @@ export default function ThemeForm() {
     return (
         <div id="form-container">
             <div>
-                <h3>Changer la couleur principale :</h3>
+                <h3>Change main color:</h3>
                 <CirclePicker
                     color={themeColor}
                     onChangeComplete={handleChangeComplete}
                 />
             </div>
             <div>
-                <h3>Changer le theme :</h3>
+                <h3>Switch Light/Dark Theme:</h3>
                 {buttonTheme}
             </div>
         </div>

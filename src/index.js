@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { MonthContextProvider } from './Context/MonthContext';
 import { ModalContextProvider } from './Context/ModalContext';
 import { ThemeContextProvider } from './Context/ThemeContext';
+import { CalendarDataContextProvider } from './Context/CalendarDataContext';
 import './index.css';
 import App from './App';
 
@@ -12,7 +13,9 @@ root.render(
     <MonthContextProvider>
       <ModalContextProvider>
         <ThemeContextProvider>
-          <App />
+          <CalendarDataContextProvider>
+            <App />
+          </CalendarDataContextProvider>
         </ThemeContextProvider>
       </ModalContextProvider>
     </MonthContextProvider>

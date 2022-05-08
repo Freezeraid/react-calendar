@@ -21,7 +21,7 @@ export default function Month() {
 
   const changeDate = () => {
     setDisplay(prev => !prev);
-    setTitle("Changer le mois et l'année:");
+    setTitle("Change Month and Year:");
     setForm(<MonthForm/>);
   }
 

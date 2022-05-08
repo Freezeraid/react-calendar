@@ -12,6 +12,8 @@ export const MonthContextProvider = ({children}) => {
     }
 
     const setMonthAndYear = (_monthIndex, _year) => {
+        if (_monthIndex < 1) _monthIndex = 1;
+        if (_monthIndex > 12) _monthIndex = 12;
         setMonth({month: _monthIndex - 1, year: _year});
     }
 

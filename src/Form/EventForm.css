@@ -1,0 +1,66 @@
+#form-container.event-form-container {
+    overflow-y: scroll;
+    justify-content: space-between;
+}
+
+.day-event {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8% 0;
+}
+
+.day-event > div {
+    display: flex;
+    align-items: center;
+    flex: 60%;
+}
+
+.day-event > div > svg{
+    margin-right: 3%;
+    color: red;
+    transition: background-color 0.2s linear;
+}
+
+.day-event > div > svg:hover{
+    color: darkred;
+}
+
+.hour-event {
+    font-size: 1.3rem;
+}
+
+#add-event-form {
+    display: flex;
+    align-items: center;
+}
+
+#add-event-form input {
+    padding: 3% 5%;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+#add-event-form input[type='submit']{
+    flex: 15%;
+    background-color: green;
+    border: 0;
+    color: #eee;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.1s linear;
+}
+
+
+#add-event-form input[type='submit']:hover{
+    background-color: darkgreen;
+}
+
+#event-title {
+    flex: 45%;
+}
+
+#event-hour {
+    flex: 40%;
+}

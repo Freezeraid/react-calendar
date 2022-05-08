@@ -1,12 +1,16 @@
 import React, {useContext} from 'react'
-import { MonthContext } from '../Context/MonthContext';
 import DAYS from "../Constant/Days";
+import MONTHS from '../Constant/Months';
 import COLORS from "../Constant/Colors";
+import { MonthContext } from '../Context/MonthContext';
+import { ModalContext } from '../Context/ModalContext';
 import { ThemeContext } from '../Context/ThemeContext';
+import EventForm from '../Form/EventForm';
 import './Calendar.css'
 
 export default function Calendar() {
   const {month} = useContext(MonthContext);
+  const {setDisplay, setTitle, setForm} = useContext(ModalContext);
   const {isDark, themeColor} = useContext(ThemeContext);
 
   const displayDaysNames = () => {
@@ -35,6 +39,16 @@ export default function Calendar() {
       }
     }
 
+    const modalDay = (_day) => {
+      setDisplay(prev => !prev);
+      setTitle(`Manage events of ${MONTHS[month.month - 1]} ${_day}, ${month.year}:`);
+      setForm(<EventForm
+        day={_day}
+        month={month.month}
+        year={month.year}
+      />);
+    }
+
     let isMonth = false;
     
     return (
@@ -55,6 +69,7 @@ export default function Calendar() {
                       }}
                       onMouseEnter={(e) => { if (!e.target.className.includes('not-month-span')) e.target.style.backgroundColor = themeColor; }}
                       onMouseLeave={(e) => { if (!e.target.className.includes('not-month-span')) e.target.style.backgroundColor = 'transparent'; }}
+                      onClick={(e) => { if (!e.target.className.includes('not-month-span')) modalDay(day); }}
                     >{day}</span></td> 
                   })
                 }

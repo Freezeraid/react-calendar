@@ -14,11 +14,11 @@
     position: relative;
     width: clamp(30%, 800px, 90%);
     height: clamp(50%, 800px, 90%);
-    padding: 1% 8% 3% 8%;
+    padding: 1% 5% 3% 5%;
 }
 
 .svg-inline--fa.fa-xmark {
-    font-size: 2.5rem;
+    font-size: 2rem;
     position: absolute;
     top: 4%;
     left: 7%;
@@ -27,8 +27,9 @@
 
 #modal-container h2 {
     display: flex;
+    font-style: italic;
     align-items: center;
     justify-content: center;
-    height: 20%;
-    font-size: 2rem;
+    height: 30%;
+    font-size: 1.8rem;
 }
