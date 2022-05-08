@@ -1,6 +1,34 @@
-
-
 #calendar-section td{
    text-align: center;
+}
+
+#calendar-section thead {
+   font-size: 28px;
+}
+
+#calendar-section th {
+   padding-bottom: 4%;
+   width: calc(100% / 7);
+}
+
+#calendar-section td {
+   padding: 0.5% 0;
+}
+
+#calendar-section span {
+   display: inline-block;
+   line-height: 3.6;
+   margin: 0 auto;
+   width: 60px;
+   height: 60px;
+   border-radius: 10px;
+   border: 1px solid #bbb;
    cursor: pointer;
+}
+
+.day-calendar {
+   font-weight: 700;
+}
+.day-calendar.not-month {
+   color: #bbb;
 }

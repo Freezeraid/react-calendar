@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: clamp(1rem, 5vw, 2rem);
+    font-size: clamp(2rem, 5vw, 1rem);
     font-weight: 900;
 }
 

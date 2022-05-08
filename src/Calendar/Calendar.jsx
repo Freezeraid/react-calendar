@@ -31,6 +31,8 @@ export default function Calendar() {
         counter++;
       }
     }
+
+    let isMonth = false;
     
     return (
       <tbody>
@@ -39,7 +41,12 @@ export default function Calendar() {
             return (
               <tr key={i}>
                 {
-                  ele.map((day, ind) => <td key={ind}>{day}</td>)
+                  ele.map((day, ind) => { 
+                    let nameClass = "day-calendar";
+                    if (day === 1) isMonth = !isMonth;
+                    if (!isMonth) nameClass += " not-month"
+                    return <td className={nameClass} key={ind}><span>{day}</span></td> 
+                  })
                 }
               </tr>
             )
