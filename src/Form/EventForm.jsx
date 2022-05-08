@@ -16,7 +16,7 @@ export default function EventForm({day, month, year}) {
 
     const deleteEvent = (_index) => {
         let dayData = data[dayIndex];
-        let newData = data;
+        let newData = {...data};
         let newDayData = dayData.filter((_, index) => {
             return index !== _index
         });
@@ -44,7 +44,7 @@ export default function EventForm({day, month, year}) {
         e.preventDefault();
         if (eventTitle.current.value === "" || eventHour.current.value === "") return;
         let newEvent = {title: eventTitle.current.value, hour: eventHour.current.value};
-        let newData = data;
+        let newData = {...data};
         if (newData[dayIndex] === undefined) newData[dayIndex] = [];
         newData[dayIndex].push(newEvent);
         setData(newData);
