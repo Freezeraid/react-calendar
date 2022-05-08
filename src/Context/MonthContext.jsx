@@ -12,7 +12,7 @@ export const MonthContextProvider = ({children}) => {
     }
 
     const setMonthAndYear = (_monthIndex, _year) => {
-        setMonth({month: _monthIndex, year: _year});
+        setMonth({month: _monthIndex - 1, year: _year});
     }
 
     const changeMonth = (_step) => {
@@ -34,7 +34,7 @@ export const MonthContextProvider = ({children}) => {
     }
 
     return (
-        <MonthContext.Provider value={{ month, getDisplayMonth, changeMonth }}>
+        <MonthContext.Provider value={{ month, getDisplayMonth, changeMonth, setMonthAndYear }}>
             {children}
         </MonthContext.Provider>
     )

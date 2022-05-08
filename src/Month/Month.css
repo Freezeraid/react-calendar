@@ -13,4 +13,5 @@
 #month-section time {
     width: clamp(350px, 20%, 100px);
     text-align: center;
+    cursor: pointer;
 }
