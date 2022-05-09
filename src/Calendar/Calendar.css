@@ -3,7 +3,7 @@
 }
 
 #calendar-section thead {
-   font-size: 28px;
+   font-size: clamp(16px, 2vw, 28px);
 }
 
 #calendar-section th {

@@ -18,7 +18,7 @@ export default function Modal() {
             style={{ 
                 color: isDark ? COLORS.light : COLORS.dark,
                 backgroundColor: isDark ? COLORS.dark : COLORS.light,
-                border:  isDark ? `1px solid ${COLORS.light}` : `1px solid ${COLORS.dark}`,
+                border:  isDark ? `1px solid ${COLORS.lightgrey}` : `1px solid ${COLORS.darkgrey}`,
             }}>
                 <FontAwesomeIcon onClick={() => setDisplay(prev => !prev)} icon={faXmark} />
                 <h2>{title}</h2>

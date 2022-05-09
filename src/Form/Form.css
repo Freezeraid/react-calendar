@@ -13,3 +13,16 @@
     font-size: 2rem;
     cursor: pointer;
 }
+
+#form-container input[type="text"],
+#form-container input[type="number"],
+#form-container input[type="time"] {
+    border: 1px solid #111;
+    background-color: #fff;
+}
+
+#form-container input[type="text"]:focus-visible,
+#form-container input[type="number"]:focus-visible,
+#form-container input[type="time"]:focus-visible {
+    outline: 0;
+}

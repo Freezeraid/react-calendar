@@ -10,7 +10,7 @@
 }
 
 #modal-container {
-    border-radius: 30px;
+    border-radius: 12px;
     position: relative;
     width: clamp(30%, 800px, 90%);
     height: clamp(50%, 800px, 90%);
@@ -21,7 +21,7 @@
     font-size: 2rem;
     position: absolute;
     top: 4%;
-    left: 7%;
+    right: 7%;
     cursor: pointer;
 }
 

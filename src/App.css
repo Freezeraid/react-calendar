@@ -5,3 +5,16 @@
     height: 100%;
     padding: 5% 25%;
 }
+
+@media screen and (max-width: 768px){
+    .App {
+        padding: 5% 12%;
+    } 
+}
+
+
+@media screen and (max-width: 570px){
+    .App {
+        padding: 5%;
+    } 
+}

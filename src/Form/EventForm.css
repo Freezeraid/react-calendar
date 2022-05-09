@@ -3,6 +3,16 @@
     justify-content: space-between;
 }
 
+#form-container.event-form-container::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+}
+
+#form-container.event-form-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
 .day-event {
     display: flex;
     justify-content: space-between;
