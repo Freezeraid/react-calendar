@@ -6,13 +6,13 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 import './Form.css'
 
 export default function ThemeForm() {
-    const { isDark, setIsDark, themeColor, setThemeColor } = useContext(ThemeContext);
+    const { isDark, switchTheme, themeColor, changeThemeColor } = useContext(ThemeContext);
 
-    const buttonTheme = isDark ? <FontAwesomeIcon onClick={() => setIsDark(prev => !prev)} icon={faSun} />
-    : <FontAwesomeIcon onClick={() => setIsDark(prev => !prev)} icon={faMoon} /> ;
+    const buttonTheme = isDark ? <FontAwesomeIcon onClick={() => switchTheme()} icon={faSun} />
+    : <FontAwesomeIcon onClick={() => switchTheme()} icon={faMoon} /> ;
 
     const handleChangeComplete = (color) => {
-        setThemeColor(color.hex);
+        changeThemeColor(color.hex);
     }
 
     return (

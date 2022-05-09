@@ -9,7 +9,7 @@ import EventForm from '../Form/EventForm';
 import './Calendar.css'
 
 export default function Calendar() {
-  const {data} = useContext(CalendarDataContext);
+  const {calendarData} = useContext(CalendarDataContext);
   const {month} = useContext(MonthContext);
   const {setDisplay, setTitle, setForm} = useContext(ModalContext);
   const {themeColor} = useContext(ThemeContext);
@@ -64,8 +64,9 @@ export default function Calendar() {
                     if (day === 1) isMonth = !isMonth;
                     if (!isMonth) nameClass += " not-month"
                     return <td className={nameClass} key={ind}><span className={`day-span ${isMonth ? 'month-span' : 'not-month-span'}`}
-                      style={{border: data[`${day}${month.month}${month.year}`] !== undefined && 
-                              isMonth ? `2px solid ${themeColor}` : '0'
+                      style={{border: (calendarData[`${day}${month.month}${month.year}`] !== undefined) && 
+                              isMonth ?  
+                              calendarData[`${day}${month.month}${month.year}`].length !== 0 ? `2px solid ${themeColor}` : '0' : '0'
                       }}
                       onMouseEnter={(e) => { if (!e.target.className.includes('not-month-span')) e.target.style.backgroundColor = themeColor; }}
                       onMouseLeave={(e) => { if (!e.target.className.includes('not-month-span')) e.target.style.backgroundColor = 'transparent'; }}

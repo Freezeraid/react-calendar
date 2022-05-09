@@ -11,23 +11,23 @@ export default function EventForm({day, month, year}) {
     const dayIndex = `${day}${month}${year}`;
 
     const { themeColor } = useContext(ThemeContext);
-    const { data, setData } = useContext(CalendarDataContext);
+    const { calendarData, changeCalendarData } = useContext(CalendarDataContext);
 
     const eventTitle = useRef(null);
     const eventHour = useRef(null);
 
     const deleteEvent = (_index) => {
-        let dayData = data[dayIndex];
-        let newData = {...data};
+        let dayData = calendarData[dayIndex];
+        let newData = {...calendarData};
         let newDayData = dayData.filter((_, index) => {
             return index !== _index
         });
         newData[dayIndex] = newDayData;
-        setData(newData);
+        changeCalendarData(newData);
     }
 
     const displayCalendarData = () => {
-        let dayData = data[dayIndex]
+        let dayData = calendarData[dayIndex]
         if (dayData === undefined) return;
         return dayData.map((element, index) => {
             return (
@@ -46,10 +46,10 @@ export default function EventForm({day, month, year}) {
         e.preventDefault();
         if (eventTitle.current.value === "" || eventHour.current.value === "") return;
         let newEvent = {title: eventTitle.current.value, hour: eventHour.current.value};
-        let newData = {...data};
+        let newData = {...calendarData};
         if (newData[dayIndex] === undefined) newData[dayIndex] = [];
         newData[dayIndex].push(newEvent);
-        setData(newData);
+        changeCalendarData(newData);
     }
 
     return (
