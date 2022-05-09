@@ -36,3 +36,11 @@
 .day-calendar.not-month {
    color: #888;
 }
+
+@media screen and (max-width: 500px){
+   #calendar-section span {
+      width: 35px;
+      height: 35px;
+      line-height: 2.2;
+   }
+}

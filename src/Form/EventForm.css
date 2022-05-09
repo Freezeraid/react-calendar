@@ -75,3 +75,18 @@
 #event-hour {
     width: 30%;
 }
+
+
+@media screen and (max-width: 500px){
+    #event-title {
+        width: 45%;
+    }
+    
+    #event-hour {
+        width: 30%;
+    }
+
+    #add-event-form input[type='submit']{
+        width: 25%;
+    }
+}
